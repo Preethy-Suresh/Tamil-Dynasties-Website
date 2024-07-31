@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .mainslidecontainer{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column  ;
+    background: rgb(29, 29, 29);
+    gap:10px;
+  }
+  /* Icon to Go Up*/
+.mainpage{
+  color: white;
+  font-size: 38px;
+  opacity: 0.3;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index:1;
+}
+h1{
+  font-size: 40px;
+  color: burlywood;
+  text-shadow: rgba(233, 90, 8, 0.767) 0px 3px 8px;
+  margin: 10px;
+}
+/* Slide portion starts fom here */
+  .slidercontainer {
+    position: relative;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    box-shadow: rgba(233, 90, 8, 0.767) 0px 2px 4px 0px, rgba(233, 90, 8, 0.767) 0px 2px 16px 0px;
+  }
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    animation: 60s cubic-bezier(1, 0.5, 0.565, 1) sliding infinite;
+  }
+  .slide {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
+.caption {
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    color: white;
+    background: rgba(5, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 0 25px 25px 0;
+  }
+  @keyframes sliding {
+    0% {
+      transform: translateX(0%);
+    }
+    5% {
+      transform: translateX(0%);
+    }    
+    10% {
+      transform: translateX(-100%);
+    }
+    15% {
+      transform: translateX(-100%);
+    }
+    20% {
+      transform: translateX(-200%);
+    }
+    25% {
+      transform: translateX(-200%);
+    }
+    30% {
+      transform: translateX(-300%);
+    }
+    35% {
+      transform: translateX(-300%);
+    }
+    40% {
+      transform: translateX(-400%);
+    }
+    45% {
+      transform: translateX(-400%);
+    }
+    50% {
+      transform: translateX(-500%);
+    }
+    55% {
+      transform: translateX(-500%);
+    }
+    60% {
+      transform: translateX(-600%);
+    }
+    65% {
+      transform: translateX(-600%);
+    }
+    70% {
+      transform: translateX(-700%);
+    }
+    75% {
+      transform: translateX(-700%);
+    }
+    80% {
+      transform: translateX(-800%);
+    }
+    85% {
+      transform: translateX(-800%);
+    }
+    90% {
+      transform: translateX(-900%);
+    }
+    95% {
+      transform: translateX(-900%);
+    }
+    100% {
+      transform: translateX(-1000%);
+    }
+  }
+  /* Responsive code */
+  @media only screen and (min-width:320px) and (max-width:800px){
+  h1{
+        font-size: 22px;
+        margin-top: 50px;
+    }
+    .slidercontainer{
+      width: 95%;
+    }
+    .mainpage{font-size: 34px;}
+}

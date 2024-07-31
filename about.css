@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
+  }
+  body{    background-color: burlywood;}
+  .container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column  ;
+    border: 1px solid burlywood;
+    background-color: burlywood;
+    gap:20px;
+  }
+    /* Icon to Go Up*/
+.mainpage{
+  color: #49350e;
+  font-size: 38px;
+  opacity: 0.3;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index:1;
+}
+  nav{
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+
+}
+nav h1 {
+    font-size: 40px;
+}
+  .aboutcontainer{
+    width: 80%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column  ;
+    border: 1px solid burlywood;
+    background-color: burlywood;
+    border-radius: 10px;
+    box-shadow: rgba(233, 90, 8, 0.767) 0px 3px 8px;
+    gap:20px;
+    padding:20px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+  }
+  /* Responsive code */
+  @media only screen and (max-width:600px)
+  {
+    .container{
+      height: 100%;
+      margin: 10px 0px;
+    }
+    .mainpage{font-size: 24px;}
+    .aboutcontainer{height: 100%;}
+  }
+  

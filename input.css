@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    cursor: pointer;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: burlywood;
+    /* color:white; */
+}
+:root{
+    --fcolor:#49350e;
+}
+.maincontainer{
+    width: 100%;
+    min-height: 800px;
+}
+/* Nav Bar Container */
+.navBar{
+    width: 100%;
+    display: flex;
+}
+nav{
+    width: 99.5%;
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    position: sticky;
+    z-index:99;
+}
+.navBar h1 {
+    font-size: 30px;
+}
+.subNav {
+    display: none;
+    justify-content: right;
+    align-items: end;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding-top: 45px;
+    width: 150px;
+    transition: all 1s;
+    overflow: hidden;
+}
+.subNav a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: all 0.5s ease-out;
+}
+.subNav a:hover {
+    background-color: burlywood;
+    border-radius: 5px;
+    color: var(--fcolor);
+    margin-right: 5px;
+}
+.homeicon {
+    font-size: 30px;
+}
+.closeicon {
+    font-size: 20px;
+    display: none;
+    color: black;
+    padding: 3px 5px;
+    background-color: burlywood;
+    border-radius: 5px;
+}
+#home {
+    display: none;
+}
+#home:checked ~ .subNav {
+    display: flex;
+    right: 2px;
+}
+/* Main Container starts from here */
+.homecontainer{
+    height: 100%;  
+    display: grid;
+    gap:40px;
+}
+/* Heading Section with position*/
+.topheading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+/* Heading image with position */
+.mahabalipuram{
+    width: 100vw;
+    height: 100vh;
+    animation-name: picture;
+    animation-duration: 7s;
+    animation-delay: 1s;
+    position: static;
+    z-index:2;
+}
+@keyframes picture {
+    from{
+        transform: scaleY(1.1);
+        opacity:0.2;
+    }
+    to{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+/* Heading text with position */
+.topheading h1{
+    color: white;
+    font-size: 100px;
+    text-shadow: 0 4px 8px black, 0 6px 8px black;
+    position: absolute;
+    left: 23%;
+    bottom: 50%;
+    animation-name: topic;
+    animation-duration: 3s;
+    animation-delay: 4s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    z-index:3;
+}
+@keyframes topic{
+    0%{
+        left: 23%;
+        bottom: 50%;
+        opacity: 0;
+    }
+    100%{
+        left: 23%;
+        bottom: 40%;
+        opacity: 1;
+    }
+}
+.topheading i{
+    color: white;
+    font-size: 30px;
+    text-shadow: 0 4px 8px black, 0 6px 20px black;
+    cursor: pointer;
+    position: absolute;
+    left:47%;
+    bottom:32%;
+    animation-name: downarrow;
+    animation-duration: 1s;
+    animation-delay: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    z-index: 4;
+}
+@keyframes downarrow {
+    0%{
+        left: 47%;
+        bottom: 32%;
+        opacity: 0.7;
+    }
+    100%{
+        left: 47%;
+        bottom: 32%;
+        opacity: 1;
+    }
+}
+/* Menu starts here */
+.menucontainer{
+    min-height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+    padding: 10px;
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.maincontainer p{
+    text-align: justify;
+}
+.topmenu{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    gap:20px;
+}
+/* Table of contents */
+.contentlist{
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    flex-direction: column;
+    width: 20%;
+    height: 375px;
+    border-radius: 10px;
+    /* background-color: var(--fcolor); */
+    background: url("./old-paper.jpg")  no-repeat;
+    box-shadow: rgba(233, 90, 8, 0.767) 0px 3px 8px;
+    padding: 10px;
+    padding-left: 20px;
+    gap:15px;
+}
+.contentlist h2{
+    color: var(--fcolor);
+    text-decoration: underline;
+}
+.contentlist a{
+    font-size: 20px;
+    color: var(--fcolor);
+    text-decoration: none;
+}
+.contentlist a:hover{  /* Hover effects for contents */
+    background-color: blanchedalmond;
+    border: 2px solid var(--fcolor);
+    border-radius: 10px;
+    padding: 5px 7px;
+    color: black;
+}
+/* Mainpage contents */
+.mainmenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    border: 1px solid burlywood;
+    border-radius: 10px;
+    box-shadow: rgba(233, 90, 8, 0.767) 0px 3px 8px;
+    /* color:whitesmoke; */
+    gap:5px;
+    padding: 10px;
+    background: url("./old-paper.jpg")  no-repeat;
+    background-size: cover;
+}
+.mainmenu h1{
+    font-size: 40px;
+    color:var(--fcolor);
+    margin:10px;
+    text-shadow: 2px 2px 2px var(--fcolor);
+    letter-spacing: 2px;
+}
+.mainmenu :nth-child(3)::first-letter {
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--fcolor);
+    line-height: 1;
+  }
+#view{display: none;} /* To hide the checkbox*/
+
+#view:checked ~ .contentless{ /*used to show the hidden content*/
+    display: inline-block;
+}
+#view:checked ~ label{ /*used to hide the show more button*/
+    display: none;
+}
+.contentless{
+    display: none;
+    padding-bottom: 15px;
+}
+.mainmenu p{
+    font-size: 20px;
+    text-indent: 75px;
+    margin: 5px;
+} 
+.mainmenu label{
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: medium;
+    font-weight: bold;
+    background-color: transparent;
+    margin-top: 20px;
+    cursor:pointer;
+}
+.Tamilakam{
+    color: var(--fcolor);
+    font-style: italic;
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* Hover text-Tamilakam */
+.hidetamilakam{
+    display: none;
+    padding: 10px;
+    border: 1px solid burlywood;
+    background-color: burlywood;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.Tamilakam:hover .hidetamilakam{
+    display: inline-block;
+}
+.intro-section{
+    /* display: flex; */
+}
+.intro-section img{
+    width: 300px;
+    height: 300px;
+    float: right;
+    border: 1px solid burlywood;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 15px 10px 10px 10px;
+}
+/* Dynasties container starts here */
+.dynasties{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:30px;
+}
+.Pallavas, .Cheras, .Pandyas, .Cholas{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    border: 1px solid burlywood;
+    border-radius: 7px;
+    background: url("./old-paper.jpg")  no-repeat;
+    background-size: cover;
+    box-shadow: rgba(233, 90, 8, 0.767) 0px 3px 8px;
+    padding: 10px;
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.Pallavas h1, .Cheras h1, .Pandyas h1, .Cholas h1{
+color: var(--fcolor);
+}
+.Pallavas p, .Cheras p, .Pandyas p, .Cholas p{
+    font-size: 20px;
+    text-indent: 75px;
+    margin: 10px;
+}
+/* Icon to Go Up*/
+.upicon{
+    font-size: 38px;
+    opacity: 0.1;
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    z-index:1;
+    color: var(--fcolor);
+    
+}
+.mamallapuram{
+    color: var(--fcolor);
+    font-style: italic;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.oldmamallapuram{
+    width: 150px;
+    height: 150px;
+    display: none;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: sticky;
+    bottom:10%;
+    left: 10%;
+    z-index:15;
+}
+.mamallapuram:hover .oldmamallapuram{
+    display:inline;
+}
+.Cholas{
+    justify-content: left;
+    align-items: start;
+    overflow: hidden;
+}
+.cholacontent{
+    display: grid;
+    grid-template-areas: 'image secondpara' 'firstpara thirdpara';
+    gap:20px;
+    position: relative;
+}
+.cholacontent:first-child{
+    grid-area: "image";
+}
+.cholacontent:nth-child(2){
+    grid-area: "firstpara";
+}
+.cholacontent:nth-child(3){
+    grid-area: "secondpara";
+}
+.cholacontent:last-child{
+    grid-area: "thirdpara";
+}
+.cholacontent img{
+    border-radius: 5px;
+}
+/* Chola Image flip using transition property */
+.card{
+    display: grid;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.front, .back{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .5s linear;
+}
+.front img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.front{
+    transform: perspective(600px) rotateY(0deg);
+}
+.back{
+    background-color: burlywood;
+    transform: perspective(600px) rotateY(180deg);
+}
+.backcontent{
+    padding: 25px;
+    color: var(--fcolor);
+    text-align: justify;
+}
+.backcontent ol{
+    padding: 5px;
+    margin:5px;
+}
+.card:hover > .front{
+    transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover > .back{
+    transform: perspective(600px) rotateY(0deg);
+}
+/* footer content */
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    margin:10px;
+    color: var(--fcolor);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: rgba(233, 90, 8, 0.767) 0px 3px 8px;
+}
+.leftfooter, .policypart{
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    flex-direction: column;
+    gap:5px;
+}
+.iconbox a{color: var(--fcolor);}
+.iconbox i{
+    font-size: x-large;
+    margin: 3px 7px; 
+}
+.policypart span{padding: 0px 5px;}
+.lastspan{
+    border-right: 1px solid gray;
+    padding-right:5px;
+}
+.rightfooter{
+    display: flex;
+    justify-content: left;
+    align-self: start;
+    flex-direction: column;
+    gap:20px;
+}
+/* Search button */
+.search{
+    display: flex;
+    flex-wrap: wrap;
+}
+.search input{
+    width:250px;
+    background-color: var(--fcolor);
+    border:1px solid var(--fcolor);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 10px;
+    border-right: none;
+}
+.search button{
+    background-color: var(--fcolor);
+    border:1px solid var(--fcolor);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10px 20px;
+    color:burlywood;
+    font-size: medium;
+    border-left: none;
+}
+input::placeholder{
+    color:burlywood;
+    font-size: medium;
+}
+
+
+/* Responsive Code */
+@media only screen and (min-width:320px) and (max-width:600px){
+    .homecontainer, .topmenu{gap:30px;}
+    .topheading{
+        width:100%;
+    }
+    .mahabalipuram{object-fit: cover;}
+    .topheading h1 {
+        font-size: calc(24px + (40 - 24) * ((100vw - 300px) / (600 - 300)));
+        /* min-height: 0vw; */
+      }
+    .topmenu{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .contentlist{
+        width: 95%;
+        justify-content: center;
+        align-items: center;
+    }
+    .contentlist a{font-size: 16px;}
+    .mainmenu{width: 95%;}
+    .mainmenu h1{font-size: calc(24px + (40 - 24) * ((100vw - 300px) / (600 - 300)));}
+    .mainmenu p{font-size: 16px;}
+    .dynasties h1{font-size:24px;}
+    .Pallavas p, .Cheras p, .Pandyas p, .Cholas p{font-size: 16px;}
+    .cholacontent{
+        display: grid;
+        grid-template-areas: 'image' 'firstpara' 'secondpara' 'thirdpara';
+        gap:20px;
+    }
+    .card{
+        height:400px;
+        position: static;
+    }
+    .picture, .front, .back{
+        height:400px;
+        font-size: calc(10px + (18 - 10) * ((100vw - 300px) / (600 - 300)));
+    }
+    footer{
+        flex-direction: column;
+        gap:10px;
+        padding: 10px 20px;
+    }
+    .search input{width: 150px;}
+}
+@media only screen and (min-width:600px) and (max-width:800px){
+.topheading h1 {
+    font-size: calc(40px + (60 - 40) * ((100vw - 600px) / (800 - 600)));
+    /* min-height: 0vw; */
+  }
+.contentlist{width: 35%;}
+.mainmenu{width: 60%;}
+.cholacontent{
+    display: grid;
+    grid-template-areas: 'image' 'firstpara' 'secondpara' 'thirdpara';
+    gap:20px;
+}   
+.card{
+    height:500px;
+    position: static;
+}
+.picture, .front, .back{
+    height:500px;
+    font-size: calc(10px + (18 - 10) * ((100vw - 300px) / (600 - 300)));
+}
+ .mainmenu h1{font-size: calc(24px + (40 - 24) * ((100vw - 300px) / (600 - 300)));}
+ footer{
+    gap:10px;
+    padding: 10px 20px;
+}
+ .search input{width: 150px;}
+}
+@media only screen and (min-width:800px) and (max-width:1400px){
+    .topheading h1 {
+        font-size: calc(60px + (100 - 60) * ((100vw - 800px) / (1400 - 800)));
+        /* min-height: 0vw; */
+      }
+}
